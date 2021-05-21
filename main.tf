@@ -7,7 +7,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "sreeterraformbucket"
+    bucket = "surenterra"
     key    = "gitpackterr.tfstate"
     region = "us-east-1"
   }
@@ -113,7 +113,7 @@ resource "aws_instance" "web-1" {
     #ami = "${data.aws_ami.my_ami.id}"
     availability_zone = "us-east-1a"
     instance_type = "t2.micro"
-    key_name = "LaptopKey"
+    key_name = "test"
     subnet_id = "${aws_subnet.subnet1-public.id}"
     vpc_security_group_ids = ["${aws_security_group.allow_all.id}"]
     associate_public_ip_address = true	
